@@ -1,6 +1,4 @@
 const path = require('path');
-var LiveReloadPlugin = require('webpack-livereload-plugin');
-
 
 module.exports = {
     mode: 'development',
@@ -13,7 +11,24 @@ module.exports = {
     devServer:{
         contentBase: 'app'
     },
-    plugins: [
-        new LiveReloadPlugin()
-    ]
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+            },
+            {
+                test: /\.html$/,
+                loader: "html"
+             },
+            {
+                test: /\.css$/,
+                use: [
+                  { loader: "style-loader" },
+                  { loader: "css-loader" }
+                ]
+            }
+      ]
+  }
 };
