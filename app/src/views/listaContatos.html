@@ -1,1 +1,37 @@
-<h1>teste</h1>
+<div class="jumbotron">
+    <h2>{{titulo}}</h2>
+    <p>
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-sm-12">
+            <form class="form-group">
+                    <input ng-model="buscar" class="form-control" type="search" placeholder="Buscar" aria-label="Search">
+            </form>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="card col-sm-12 col-lg-10 ">
+            <div class="card-conteiner">
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Telefone</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-if="contatos.length > 0">
+                        <tr ng-repeat="contato in contatos | filter:buscar" ng-click="listaTelefonicaController.remove(contato)">
+                            <td>{{contato.id}}</td>
+                            <td>{{contato.nome}}</td>
+                            <td>{{contato.telefone}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="alert alert-primary" role="alert" ng-if="contatos.length == 0">
+                  Lista de contatos vazia!
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" name="button" ng-click="listaTelefonicaController.testeAdicionarContato()" class="btn btn-primary">alterar</button>
+</div>

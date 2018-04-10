@@ -10,7 +10,9 @@ window.Popper = popper;
 
 import css from './style/app.css';
 import listaTelefonicaController from './js/controllers/ListaTelefonicaController';
+import adicionarContatoController from './js/controllers/AdicionarContatoController';
 import routes from './routes'
 var ngModule = angular.module('app', [uirouter]);
 ngModule.config(routes);
 ngModule.controller('listaTelefonicaController',listaTelefonicaController);
+ngModule.controller('adicionarContatoController',adicionarContatoController);
