@@ -7,3 +7,20 @@
 # dependencies
 /node_modules
 /bower_components
+
+
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+media
+
+# Environments
+/venv
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
