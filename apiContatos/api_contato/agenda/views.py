@@ -3,6 +3,7 @@ from django.views import View
 from django.http import JsonResponse
 from .models import Contato
 from json import dump
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 
