@@ -1,7 +1,7 @@
 <div class="jumbotron">
     <h2>{{titulo}}</h2>
     <p>
-    <form  name="adicionarContato">
+    <form  name="adicionarContato"  ng-submit="adicionarContatoController.adicionaContato()">
         <div class="row">
             <div class="col col-lg-6 col-12">
                 <div class="form-group">
@@ -18,7 +18,7 @@
         </div>
         <div class="row justify-content-center col-12">
             <div class="col-lg-6 col-12">
-                <button type="button" type="submit" class="btn btn-primary btn-block">Salvar</button>
+                <button type="submit" class="btn btn-primary btn-block" ng-disabled="adicionarContato.nome.$invalid || adicionarContato.telefone.$invalid">Salvar</button>
             </div>
         </div>
     </form>

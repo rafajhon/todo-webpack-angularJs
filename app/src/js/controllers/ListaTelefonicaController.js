@@ -1,7 +1,7 @@
 'use strict';
 export default class ListaTelefonicaController {
 
-    constructor($scope, $http) {
+    constructor($scope, $http,$transition$ ){
         this._scope = $scope;
         this._http = $http;
         this._scope.contatos = [];

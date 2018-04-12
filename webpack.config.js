@@ -1,4 +1,5 @@
 const path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
     mode: 'development',
@@ -11,6 +12,12 @@ module.exports = {
     devServer:{
         contentBase: 'app'
     },
+    plugins: [
+        new webpack.ProvidePlugin({
+          'jQuery': 'jquery',
+          'window.jQuery': 'jquery'
+        }),
+    ],
     module: {
         rules: [
             {
@@ -21,14 +28,26 @@ module.exports = {
             {
                 test: /\.html$/,
                 loader: "html-loader"
-             },
+            },
             {
-                test: /\.css$/,
+                test: /\.(scss)$/,
                 use: [
-                  { loader: "style-loader" },
-                  { loader: "css-loader" }
+                    {
+                        loader: 'style-loader',
+                    },
+                    {
+                        loader: "css-loader",
+                    },
+
+                    {
+                        loader: 'sass-loader',
+                    },
                 ]
-            }
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2|otf|png|jpeg|gif)$/,
+                loader: 'file-loader?name=webpack_content/[hash].[ext]'
+            },
       ]
   }
 };

@@ -1,3 +1,5 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
 html, body{
     height: 100%;
 }
@@ -22,4 +24,8 @@ html, body{
 
 .buscar{
     margin-bottom: 10px;
+}
+
+footer {
+    position: fixed !important;
 }
