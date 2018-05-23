@@ -1,20 +1,17 @@
 'use strict';
 export default class ListaTelefonicaController {
 
-    constructor($scope, $http,$transition$ ){
+    constructor($scope, $http,$transition$,requestService ){
         this._scope = $scope;
         this._http = $http;
         this._scope.contatos = [];
-        this.carregaContatos();
+        this.carregaContatos(); 
         this._scope.titulo = "Lista de contatos";
+        requestService.request();
     }
 
     remove(contato){
         alert(contato);
-    }
-
-    testeAdicionarContato(){
-        this.contatos.push({id:1, nome:'teste',telefone:'999999-9999'});
     }
 
     carregaContatos(){
